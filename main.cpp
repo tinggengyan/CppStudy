@@ -2,30 +2,22 @@
 
 using namespace std;
 
-// define the function
-int simpleDataType();
+//define the function
+int sqr(int);
 
 int main() {
-
-    cout << "my name is steve,it is my test in cpp";
-
-    simpleDataType();
+    //define a variable
+    int a = 0;
+    //input a int value from the console
+    cout << "please input a value to a ";
+    cin >> a;
+    //output the string
+    cout << "my name is steve,it is my test in cpp" << endl;
+    cout << "what is get is " << a << endl;
+    cout << "call the sqp method:" << sqr(5);
     return 0;
-
 }
 
-// show the usage of  data type
-int simpleDataType() {
-    // basic data type
-    int a = 1;
-    char b = 'b';
-    long c = 2;
-    short d = 1;
-
-    cout << "get the size by  data type :" << endl;
-    cout << "the size of int is " << sizeof(int) << "" << endl;
-    cout << "get the size by variable :" << endl;
-    cout << "the size of variable a is " << sizeof a << "" << endl;
-
-    return 0;
+int sqr(int a) {
+    return a * 6;
 }
