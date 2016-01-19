@@ -15,6 +15,8 @@ int simpleRadix();
 
 void simpleDefination();
 
+int simpleConvertion();
+
 
 //the main function
 int main() {
@@ -59,9 +61,37 @@ int simpleRadix() {
     cout << endl;
     cout << "inseam=" << inseam;
     cout << endl;
+
+    int c = 90;
+    cout << "basic 90:";
+    cout << hex;  //remind the change the number base
+    cout << c;
+    cout << endl;
+
+
+    // char is also a int type
+    char ch = 77; //77==M
+    int i = ch;
+    cout << dec;
+    cout << "char " << ch << " is also a int type: " << i;
+
+    cout << "displaying the usage of cout.put()" << endl;
+    // put a char to the out
+    cout.put(ch);
+    cout << endl;
     return 0;
 }
 
+//Auto convertion
+int simpleConvertion(){
+    char mChar='a';
+    int mInt=1;
+    long mLong=1000;
+    float mFlout=0.9f;
+    double mDouble=0.99f;
 
+    
 
+    return 0;
+}
 
