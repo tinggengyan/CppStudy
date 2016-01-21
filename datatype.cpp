@@ -15,7 +15,7 @@ int simpleRadix();
 
 void simpleDefination();
 
-int simpleConvertion();
+int simpleConversion();
 
 int simpleCompoundType();
 
@@ -25,6 +25,7 @@ int main() {
 //    simpleDefination();
 //    simpleRadix();
     simpleCompoundType();
+//    simpleConversion();
     return 0;
 }
 
@@ -94,13 +95,40 @@ int simpleRadix() {
     return 0;
 }
 
-//Auto convertion
-int simpleConvertion() {
+//Auto conversion
+int simpleConversion() {
     char mChar = 'a';
-    int mInt = 1;
+    cout << "mChar:" << mChar << endl;
+    //char is int
+    int mInt = mChar + 1;
+    cout << "mInt:" << mInt << endl;
     long mLong = 1000;
-    float mFlout = 0.9f;
+    long convertLong = mInt;
+    cout << "mLong:" << mLong << endl;
+    cout << "convertLong:" << convertLong << endl;
+    float mFlout = 0.9e9;
+    float convertFloat = mInt;
+    cout << "mFlout:" << mFlout << endl;
+    cout << "convertFloat:" << convertFloat << endl;
     double mDouble = 0.99f;
+    double convertDouble = mInt;
+    cout << "mDouble:" << mDouble << endl;
+    cout << "convertDouble:" << convertDouble << endl;
+    //zero is false,otherwise is true;
+    bool hasMoney = false;
+    bool hasHouse = 0;
+    bool hasTalent = 100;
+    cout << "hasMoney:" << hasMoney << "," << "hasHouse:" << hasHouse << "," << "hasTalent:" << hasTalent << endl;
+    //two numbers can auto convert to the destination type
+    float dividerFloat = 9 / 8.0;
+    int dividerInt = 9 / 8.0;
+    cout << "dividerFloat:" << dividerFloat << endl;
+    cout << "dividerInt:" << dividerInt << endl;
+    //  expression conversion
+    short short1 = 256;
+    short short2 = 255;
+    short short3 = short1 + short2;
+    cout << "short3:" << short3 << endl;
     return 0;
 }
 
@@ -109,9 +137,15 @@ int simpleConvertion() {
 int simpleCompoundType() {
     int ages[] = {10, 11, 12, 14};
     float scores[9];
-    cout << "array size :" << sizeof(ages)<< "and"<<sizeof(scores);
+    //default number is zero
+    float score[9] = {};
+    cout << "array size :" << sizeof(ages) << "and" << sizeof(scores);
     cout << endl;
     cout << "array item bytes:" << sizeof(ages[0]);
+    cout << endl;
+    cout << "array item :" << scores[5];
+    cout << endl;
+    cout << "array item :" << score[5];
     cout << endl;
     return 0;
 }
