@@ -17,11 +17,14 @@ void simpleDefination();
 
 int simpleConvertion();
 
+int simpleCompoundType();
+
 
 //the main function
 int main() {
 //    simpleDefination();
-    simpleRadix();
+//    simpleRadix();
+    simpleCompoundType();
     return 0;
 }
 
@@ -30,6 +33,8 @@ void simpleDefination() {// basic int data type
     char b = 'b';
     long c = 2 + a;
     short d = 1;
+    bool isReady = true;
+    bool isOk = false;
 
     cout << "get the size by  data type :" << endl;
     cout << "the size of int is " << sizeof(int) << " bytes " << endl;
@@ -47,6 +52,13 @@ void simpleDefination() {// basic int data type
 
     cout << SURNAME;
     cout << "'s AGE IS " << AGE;
+
+    if (isReady) {
+
+        cout << isOk;
+    }
+
+
 }
 
 
@@ -83,15 +95,23 @@ int simpleRadix() {
 }
 
 //Auto convertion
-int simpleConvertion(){
-    char mChar='a';
-    int mInt=1;
-    long mLong=1000;
-    float mFlout=0.9f;
-    double mDouble=0.99f;
-
-    
-
+int simpleConvertion() {
+    char mChar = 'a';
+    int mInt = 1;
+    long mLong = 1000;
+    float mFlout = 0.9f;
+    double mDouble = 0.99f;
     return 0;
 }
 
+
+//simple compound types
+int simpleCompoundType() {
+    int ages[] = {10, 11, 12, 14};
+    float scores[9];
+    cout << "array size :" << sizeof(ages)<< "and"<<sizeof(scores);
+    cout << endl;
+    cout << "array item bytes:" << sizeof(ages[0]);
+    cout << endl;
+    return 0;
+}
