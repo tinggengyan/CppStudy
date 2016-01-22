@@ -20,13 +20,22 @@ int simpleConversion();
 
 int simpleCompoundType();
 
+int getString();
+
+int getStringByLine();
+
+int getStringByGet();
+
 
 //the main function
 int main() {
 //    simpleDefination();
 //    simpleRadix();
-    simpleCompoundType();
+//    simpleCompoundType();
 //    simpleConversion();
+//    getString();
+//    getStringByLine();
+    getStringByGet();
     return 0;
 }
 
@@ -161,7 +170,7 @@ int simpleCompoundType() {
     // C style
     char dogs[5] = {'d', 'o', 'g', 's'}; //not a string
     char cats[5] = {'c', 'a', 't', 's', '\0'}; //is a string,the length includes the end sign
-    char pigs[5] = {'p', 'i', 'g','\0'};
+    char pigs[5] = {'p', 'i', 'g', '\0'};
     cout << "cat:" << cats << endl;
     cout << "dog:" << dogs << endl;
 
@@ -173,5 +182,64 @@ int simpleCompoundType() {
     cout << "pig length:" << strlen(pigs);
     cout << endl;
 
+    return 0;
+}
+
+
+//input string
+int getString() {
+    //simple input
+    const int ArSize = 20;
+    char name[ArSize];
+    char dessert[ArSize];
+    cout << "Enter your name: \n";
+    cin >> name;
+    cout << "Enter your favourite dessert:\n";
+    cin >> dessert;
+    cout << "I have some delicious " << dessert;
+    cout << " for you, " << name << ".\n";
+
+    // when input words include blank will cause some problems
+    // such the above first input 'steve yan',then will pass the dessert input
+    // the word behind  blank ,yan will be for the dessert
+    // because the sentence is recognize as finished by the blank ,tab ,and enter
+    // so the word yan will in the input stream until the next used
+    // so the word be for the dessert auto.
+
+    return 0;
+}
+
+
+//input string,but not record the enter character
+int getStringByLine() {
+    const int ArSize = 20;
+    char name[ArSize];
+    char dessert[ArSize];
+    cout << "Enter your name: \n";
+    //can most input the 19 chars, the last one is end signal
+    cin.getline(name, 20);
+    cout << "Enter your favourite dessert:\n";
+    cin.getline(dessert, 20);
+    cout << "I have some delicious " << dessert;
+    cout << " for you, " << name << ".\n";
+    return 0;
+}
+
+
+// this way ,the Stream will record the enter signal
+int getStringByGet(){
+    const int ArSize = 20;
+    char name[ArSize];
+    char dessert[ArSize];
+    cout << "Enter your name: \n";
+    //can most input the 19 chars, the last one is end signal
+    cin.get(name, 20);
+    cin.get();
+    cout << "Enter your favourite dessert:\n";
+    // here will be input the enter signal
+    cin.get(dessert, 20);
+    cin.get();
+    cout << "I have some delicious " << dessert;
+    cout << " for you, " << name << ".\n";
     return 0;
 }
