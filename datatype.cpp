@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <climits>
+#include <cstring>
 
 #define SURNAME "Yan";
 const int AGE = 17;
@@ -135,17 +136,42 @@ int simpleConversion() {
 
 //simple compound types
 int simpleCompoundType() {
+    //simple array and give all init values
     int ages[] = {10, 11, 12, 14};
+    //define the array by not init values
     float scores[9];
     //default number is zero
-    float score[9] = {};
-    cout << "array size :" << sizeof(ages) << "and" << sizeof(scores);
+    float initByGivenDefault[9] = {};
+    cout << "array obj : " << sizeof(ages) << " bytes and " << sizeof(scores) << " bytes";
     cout << endl;
-    cout << "array item bytes:" << sizeof(ages[0]);
+    cout << "array item bytes: " << sizeof(ages[0]);
     cout << endl;
-    cout << "array item :" << scores[5];
+    cout << "array item not init: " << scores[5];
     cout << endl;
-    cout << "array item :" << score[5];
+    cout << "array item by init : " << initByGivenDefault[5];
     cout << endl;
+    cout << "does't exit item,will out the exception data: " << initByGivenDefault[9];
+    cout << endl;
+    cout << "array has items:" << sizeof(ages) / sizeof(ages[0]);
+    cout << endl;
+
+    /**
+     * the following is String
+     */
+    // C style
+    char dogs[5] = {'d', 'o', 'g', 's'}; //not a string
+    char cats[5] = {'c', 'a', 't', 's', '\0'}; //is a string,the length includes the end sign
+    char pigs[5] = {'p', 'i', 'g','\0'};
+    cout << "cat:" << cats << endl;
+    cout << "dog:" << dogs << endl;
+
+    //strlen return the string characters length ,not the array size
+    cout << "cat length:" << strlen(cats);
+    cout << endl;
+    cout << "dog length:" << strlen(dogs);
+    cout << endl;
+    cout << "pig length:" << strlen(pigs);
+    cout << endl;
+
     return 0;
 }
