@@ -1,0 +1,10 @@
+%clang++
+%c -std=c11
+%cpp -std=c++14
+%h -x
+%h c++-header
+
+-I/System/Library/Frameworks
+-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks
+
+# Includes
