@@ -7,4 +7,6 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(./)
 aux_source_directory(./ src)
 
-add_executable(looper ${src})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../output)
+
+add_executable(a.out ${src})
