@@ -6,3 +6,9 @@
 3. 且生成物的名字均为 a.out
 
 以上这么做的原因在为了debug方便
+
+## debug 方法
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Debug ../static/
+make
+F5
