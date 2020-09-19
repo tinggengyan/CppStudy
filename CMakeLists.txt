@@ -9,5 +9,6 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS -pthread)
 
 
-add_subdirectory (looper)
-add_subdirectory (static)
+add_subdirectory(looper)
+add_subdirectory(static)
+add_subdirectory(net)
