@@ -1,12 +1,6 @@
-cmake_minimum_required(VERSION 3.12)
 
-project(looper)
+include_directories(./lib)
 
-set(CMAKE_CXX_STANDARD 14)
-
-include_directories(./)
 aux_source_directory(./ src)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../output)
-
-add_executable(a.out ${src})
+add_executable(loop ${src})
