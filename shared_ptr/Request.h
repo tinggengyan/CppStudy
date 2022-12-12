@@ -12,6 +12,9 @@ class Request {
 public:
     std::string name;
 
+    Request();
+
+    virtual void send();
 };
 
 

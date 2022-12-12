@@ -5,6 +5,7 @@
 #include <memory>
 #include <iostream>
 #include "Request.h"
+#include "Http1Request.h"
 
 
 std::shared_ptr<Request> methodA() {
@@ -73,6 +74,11 @@ void passShared_ptrReference(const std::shared_ptr<Request> &ptr) {
 }
 
 
+void polymorphism() {
+    std::shared_ptr<Request> request = std::make_shared<Http1Request>();
+    request->send();
+}
+
 int main() {
 
     const std::shared_ptr<Request> &ptr = methodA();
@@ -83,6 +89,7 @@ int main() {
     std::cout << "return ptr: obj address:" << ptr.get() << std::endl;
 
     passShared_ptrReference(ptr);
+    polymorphism();
 
     return 0;
 }
