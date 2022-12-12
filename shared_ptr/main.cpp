@@ -24,7 +24,7 @@ std::shared_ptr<Request> methodA() {
     return ptr;
 }
 
-void diff_between_constructor_make(){
+void diff_between_constructor_make() {
     Request *feo = new Request();
     // 参数是 泛型的 指针
     std::shared_ptr<Request> sharedPtrA(feo);
@@ -63,6 +63,16 @@ void diff_between_constructor_make(){
 }
 
 
+void passShared_ptrValue(const std::shared_ptr<Request> ptr) {
+    std::cout << "passShared_ptrValue :" << ptr.use_count() << std::endl;
+}
+
+void passShared_ptrReference(const std::shared_ptr<Request> &ptr) {
+    std::cout << "passShared_ptrReference : use count:" << ptr.use_count() << std::endl;
+    passShared_ptrValue(ptr);
+}
+
+
 int main() {
 
     const std::shared_ptr<Request> &ptr = methodA();
@@ -71,6 +81,8 @@ int main() {
     std::cout << "return ptr: name:" << ptr->name << std::endl;
     std::cout << "return ptr: address:" << &ptr << std::endl;
     std::cout << "return ptr: obj address:" << ptr.get() << std::endl;
+
+    passShared_ptrReference(ptr);
 
     return 0;
 }
