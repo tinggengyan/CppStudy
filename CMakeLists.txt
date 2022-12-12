@@ -1,5 +1,5 @@
 # announce minimum version needed
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.23)
 
 # custom project name
 project(CppStudy)
@@ -33,3 +33,4 @@ add_subdirectory(smartpoint/)
 add_subdirectory(general/)
 add_subdirectory(default_delete/)
 add_subdirectory(map_interface/)
+add_subdirectory(tests/)
