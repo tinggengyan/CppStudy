@@ -1,6 +1,9 @@
 // 2.x 版本必须加这个
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 
+// 可以访问 private 成员
+#include "test_enable_header.h"
+
 #include <catch2/catch.hpp>
 #include <fakeit.h>
 
