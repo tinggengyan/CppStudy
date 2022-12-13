@@ -17,6 +17,11 @@ struct SomeInterface {
     virtual int baz(int *, int &) = 0;
 };
 
+class ITrivialInterface {
+public:
+    virtual int foo1() = 0;
+};
+
 
 TEST_CASE("simple_mock", "[mock_public]") {
     Mock<SomeInterface> mock;
@@ -36,4 +41,8 @@ TEST_CASE("simple_mock", "[mock_public]") {
     // Always return a value (The next two lines do exactly the same)
     When(Method(mock, foo)).AlwaysReturn(1);
     Method(mock, foo) = 1;
+
+    Mock<ITrivialInterface> trivialInterface;
+    When(Method(trivialInterface, foo1)).Return(1);
+
 }
