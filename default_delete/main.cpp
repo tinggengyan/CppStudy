@@ -3,13 +3,13 @@
 //
 #include <iostream>
 
-class Trivial {
+class Trivial1 {
 
 public:
     // delete 标记，让编译器不要生成默认的构造函数
-    Trivial() = delete;
+    Trivial1() = delete;
 
-    Trivial(int a) {
+    Trivial1(int a) {
 
     }
 };
