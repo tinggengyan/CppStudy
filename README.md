@@ -12,3 +12,17 @@ mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Debug ../static/
 make
 F5
+
+
+## 非 ide 方案
+```shell
+# 1. build
+cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S ./ -B ./cmake-build-debug 
+
+# 2. generate excutable file
+
+cd cmake-build-debug/destDir
+make 
+./destExcutable file
+
+```

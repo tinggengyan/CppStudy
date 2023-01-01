@@ -1,5 +1,5 @@
 # announce minimum version needed
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.17.3)
 
 # custom project name
 project(CppStudy)
