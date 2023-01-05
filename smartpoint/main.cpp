@@ -39,11 +39,15 @@ void test() {
 }
 
 
-
 int main(void) {
 
 
     test();
+
+    std::shared_ptr<int> nu = {};
+    if (nu == nullptr) {
+        std::cout << "{} is nullptr" << std::endl;
+    }
 
     return 1;
 }
