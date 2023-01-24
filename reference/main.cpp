@@ -15,6 +15,9 @@ void method2(std::string &s) {
     std::cout << "method2 address:" << &s << std::endl;
 }
 
+void method3(std::string &s) {
+    s = "method3";
+}
 
 int main() {
 
@@ -23,6 +26,10 @@ int main() {
 
     method1(string);
     method2(string);
+
+    method3(string);
+    std::cout << "after method3 value is :" << string << std::endl;
+
 
     return 0;
 }
