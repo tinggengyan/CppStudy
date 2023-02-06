@@ -24,6 +24,15 @@
 #define MAX(a, b)  ((a)>(b))?(a) \
 :(b);
 
+#ifdef Windows
+#define __FILENAME__ (strrchr(__FILE__, '\\') + 1) // Windows下文件目录层级是'\\'
+#else
+#define __FILENAME__ (strrchr(__FILE__, '/') + 1) // 默认使用这种方式
+#endif
+
+// format [tag][file name][method name][line number]
+#define LOGV(TAG, format, ...) printf("[%s][%s][%s][%d]: " format, TAG,__FILENAME__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+
 
 int main() {
 
@@ -46,6 +55,9 @@ int main() {
 
     std::string max = MAX(b, m);
     std::cout << max << std::endl;
+
+
+    LOGV("sss", "custom message %d", 1)
 
     return 1;
 }
