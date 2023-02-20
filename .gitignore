@@ -4,3 +4,6 @@ build/
 output
 .idea
 cmake-build-debug
+test_coverage_catch2/.idea
+test_coverage_catch2/cmake-build-debug
+test_coverage_catch2/cmake-build-debug-coverage
