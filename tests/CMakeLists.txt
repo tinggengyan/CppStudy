@@ -10,7 +10,7 @@ FetchContent_MakeAvailable(Catch2)
 
 include_directories(../third_party)
 
-add_executable(tests_catch2 unit_test_catch2.cpp)
+add_executable(tests_catch2 unit_test_catch2.cpp test_custom_main.cpp)
 target_link_libraries(tests_catch2 PRIVATE Catch2::Catch2)
 
 add_executable(tests_fakeit unit_test_fakeit.cpp)
