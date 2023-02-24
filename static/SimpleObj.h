@@ -1,11 +1,15 @@
 #include <iostream>
+
+extern bool flag;
+
 class SimpleObj {
 public:
-  SimpleObj();
-  ~SimpleObj();
+    SimpleObj();
 
-  int get_num();
+    ~SimpleObj();
+
+    int get_num();
 
 private:
-  int num;
+    int num;
 };
