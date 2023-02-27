@@ -1150,7 +1150,7 @@ namespace fakeit {
 }
 #if defined __has_include
 #   if __has_include("catch2/catch.hpp")
-#      include "../cmake-build-debug/_deps/catch2lib-src/single_include/catch2/catch.hpp"
+#      include "../cmake-build-debug/_deps/catch2-src/single_include/catch2/catch.hpp"
 #   elif __has_include("catch2/catch_all.hpp")
 #      include <catch2/catch_assertion_result.hpp>
 #      include <catch2/catch_test_macros.hpp>

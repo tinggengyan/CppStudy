@@ -23,6 +23,29 @@ public:
 };
 
 
+// 能 mock 的方法，必须是 virtual 的；
+// limits from https://github.com/eranpeer/FakeIt
+/**
+ *
+    Currently only GCC, Clang and MSC++ are supported.
+    On GCC, optimization flag O2 and O3 are not supported. You must compile the test project with -O1 or -O0.
+    In MSC++, your project must have Edit And Continue debug mode on (https://msdn.microsoft.com/en-us/library/esaeyddf.aspx) which is same of /ZI compiler switch. If you don't use this, you will have exceptions mocking destructors (which includes unique_ptr and other smart pointers).
+    Can't mock classes with multiple inheritance.
+    Can't mock classes with virtual inheritance.
+    Currently mocks are not thread safe.
+ */
+
+class Foo {
+public:
+    virtual void foo1() {
+    };
+
+    virtual int foo2(int m) {
+        return 2;
+    };
+};
+
+
 TEST_CASE("simple_mock", "[mock_public]") {
     Mock<SomeInterface> mock;
     // Stub a method to return a value once
@@ -44,5 +67,18 @@ TEST_CASE("simple_mock", "[mock_public]") {
 
     Mock<ITrivialInterface> trivialInterface;
     When(Method(trivialInterface, foo1)).Return(1);
+
+};
+
+
+TEST_CASE("simple_mock_Foo", "[Foo]") {
+    Mock<Foo> mock;
+
+    fakeit::When(Method(mock, foo2)).Return(1);
+
+    std::cout << mock.get().foo2(1) << std::endl;
+
+    fakeit::Verify(Method(mock, foo2));
+    fakeit::Verify(Method(mock, foo2).Using(1));
 
 }
